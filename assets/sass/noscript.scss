@@ -3,34 +3,48 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
-@import 'libs/html-grid';
 
 /*
-	Spectral by HTML5 UP
+	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Banner */
+/* BG */
 
-	body.is-preload {
-		#banner {
-			h2 {
-				@include vendor('transform', 'none');
+	#bg {
+		body.is-preload & {
+			&:before {
+				background-color: transparent;
+			}
+		}
+	}
+
+/* Header */
+
+	#header {
+		body.is-preload & {
+			> * {
 				opacity: 1;
+			}
 
-				&:before, &:after {
-					width: 100%;
+			@include vendor('filter', 'none');
+
+			.content {
+				.inner {
+					max-height: none;
+					padding: 3rem 2rem;
+					opacity: 1;
 				}
 			}
+		}
+	}
 
-			.more {
-				@include vendor('transform', 'none');
-				opacity: 1;
-			}
+/* Main */
 
-			&:after {
-				opacity: 0;
-			}
+	#main {
+		article {
+			opacity: 1;
+			margin: (_size(element-margin) * 2) 0 0 0;
 		}
 	}
